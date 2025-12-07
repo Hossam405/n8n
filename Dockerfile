@@ -1,15 +1,11 @@
-# Start from the official n8n Docker image (use your current version or 'latest')
+# Use the official n8n image as the base
 FROM n8nio/n8n:latest
 
-# --- NEW LINE: Define the environment variable in the Dockerfile ---
-ENV NODE_FUNCTION_ALLOW_EXTERNAL=steamdb-js
-
-# Switch to the root user to gain permission for global npm install
+# Switch to root to install packages
 USER root
 
-# Install the steamdb-js package globally
-RUN npm install -g steamdb-js@1.0.8
+# Install steamdb-js globally
+RUN npm install -g steamdb-js
 
-
-# Switch back to the non-root user (important for security)
+# Switch back to the default 'node' user
 USER node
