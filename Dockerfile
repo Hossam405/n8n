@@ -8,7 +8,8 @@ ENV NODE_FUNCTION_ALLOW_EXTERNAL=steamdb-js
 USER root
 
 # Install the steamdb-js package globally
-RUN npm install --prefix /usr/local/lib/node_modules steamdb-js
+RUN npm install -g steamdb-js@1.0.8
+
 
 # Switch back to the non-root user (important for security)
 USER node
