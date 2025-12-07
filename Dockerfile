@@ -6,7 +6,7 @@ USER root
 
 # Install the steamdb-js package globally
 # The '--prefix' flag ensures it is installed in a location accessible by n8n
-RUN npm install --prefix /usr/local/lib/node_modules steamdb-js
+RUN npm install -g steamdb-js
 
 # Switch back to the non-root user (important for security)
 USER node
